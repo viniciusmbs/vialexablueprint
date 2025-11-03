@@ -16,6 +16,6 @@ fields:
 sequence:
   - service: alexa_devices.send_text_command
     data:
-      device_id: "G090VV0998040N3N"
+      device_id: "media_player.vinicius_casa"
       text_command: "{{ comando }}"
 
