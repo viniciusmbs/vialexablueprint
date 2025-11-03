@@ -16,5 +16,6 @@ fields:
 sequence:
   - service: alexa_devices.send_text_command
     data:
-      device_id: "Vinicius Casa"
+      device_id: "G090VV0998040N3N"
       text_command: "{{ comando }}"
+
