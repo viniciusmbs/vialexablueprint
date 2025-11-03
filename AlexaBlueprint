@@ -1,44 +1,20 @@
 blueprint:
-  name: "Anunciar via Alexa Casa"
-  description: "Anuncia via notify.alexa_casa, ajusta volume antes e retorna para 3 depois."
+  name: "Comando para Alexa (Vinicius Casa)"
+  description: "Envia um texto diretamente para a Alexa usando send_text_command."
   domain: script
-mode: queued
-icon: mdi:bullhorn
+mode: single
+icon: mdi:microphone
 
 fields:
-  mensagem:
-    name: "Mensagem"
+  comando:
+    name: "Texto para Alexa"
+    description: "Digite o comando que será enviado para a Alexa"
     required: true
     selector:
       text:
 
-  volume:
-    name: "Volume:"
-    required: true
-    default: 7
-    selector:
-      number:
-        min: 0
-        max: 10
-        step: 1
-
 sequence:
-  - action: alexa_devices.send_text_command
+  - service: alexa_devices.send_text_command
     data:
-      device_id: "alexa_casa"
-      text_command: "volume {{ volume | int }}"
-
-  - delay:
-      seconds: 2
-
-  - service: notify.alexa_casa
-    data:
-      message: "{{ mensagem }}"
-
-  - delay:
-      seconds: 8
-
-  - action: alexa_devices.send_text_command
-    data:
-      device_id: "alexa_casa"
-      text_command: "volume 3"
+      device_id: "Vinicius Casa"
+      text_command: "{{ comando }}"
