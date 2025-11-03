@@ -1,6 +1,6 @@
 blueprint:
-  name: "Comando para Alexa (Vinicius Casa)"
-  description: "Envia um texto diretamente para a Alexa usando send_text_command."
+  name: "Comando direto para Alexa"
+  description: "Envia texto para Alexa usando send_text_command"
   domain: script
 mode: single
 icon: mdi:microphone
@@ -8,7 +8,7 @@ icon: mdi:microphone
 fields:
   comando:
     name: "Texto para Alexa"
-    description: "Digite o comando que será enviado para a Alexa"
+    description: "Digite o que a Alexa deve fazer ou dizer"
     required: true
     selector:
       text:
